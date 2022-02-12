@@ -40,7 +40,7 @@ export default function FormCompany({handleClose, item }) {
           <Typography gutterBottom variant="h5" component="h2">
             {item.name}
           </Typography>
-          <Typography variant="body1" color="text" component="body"  >
+          <Typography variant="body1" color="textPrimary" component="body"  >
                   <div>Organization :  {item.organization} </div>
                   <div>Mobilenumber :  {item.mobilenumber} </div>
                   <div>Homephone :     {item.homephone} </div>

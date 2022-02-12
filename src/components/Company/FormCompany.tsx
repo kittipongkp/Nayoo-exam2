@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { useAddCompany } from '../../hooks/useCompany';
 import Swal from "sweetalert2";
 
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(1),
