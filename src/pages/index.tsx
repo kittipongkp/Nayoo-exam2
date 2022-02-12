@@ -3,7 +3,7 @@ import Company from "../components/Company";
 
 const Home: NextPage = () => {
   return (
-    <div style={{ height: "100%", width: "80%", display: "flex", marginTop: 80 }}>
+    <div style={{ height: "100%", width: "100%", marginLeft: "auto" , marginTop: 50, marginRight: "auto"}}>
      <Company />
     </div>
   );

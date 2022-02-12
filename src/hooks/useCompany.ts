@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import axios from "axios";
 
 export type Data = {
@@ -15,9 +15,9 @@ export type Data = {
   updated_at: string;
 };
 
-export const useAddCompany = () => {
+export const useGetCompany = () => {
   return useQuery<Data[]>(
-    "todos",
+    "com",
     () =>
       axios
         .get<Data[]>(
@@ -28,3 +28,50 @@ export const useAddCompany = () => {
     {}
   );
 };
+
+export function useAddCompany() {
+  const queryClient = useQueryClient();
+  return useMutation(
+    (data) =>
+      axios.post(
+        `https://test-frontend-api.nayoo.co/api/Nayoo/1701/store`,
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      ),
+    { onSuccess: () => queryClient.invalidateQueries("com") }
+  );
+}
+
+export function useDeleteCompany() {
+  const queryClient = useQueryClient();
+  return useMutation(
+    (data) =>
+      axios.delete(
+        `https://test-frontend-api.nayoo.co/api/Nayoo/1701/destroy/${data}`
+      ),
+    { onSuccess: () => queryClient.invalidateQueries("com") }
+  );
+}
+
+export function useUpdateCompany(id: number) {
+  const queryClient = useQueryClient();
+  return useMutation(
+    (data) =>
+      axios.put(
+        `https://test-frontend-api.nayoo.co/api/Nayoo/1701/update/${id}`,
+        data,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        }
+      ),
+    { onSuccess: () => queryClient.invalidateQueries("com") }
+  );
+}
+
+
