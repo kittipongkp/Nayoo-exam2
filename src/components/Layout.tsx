@@ -10,8 +10,7 @@ import '../fontAwesome'
 
 import { theme } from '../theme'
 import NavBar from './Navbar'
-import AdsBanner from './AdsBanner'
-import AdsBannerBottom from './AdsBannerBottom'
+
 
 
 
@@ -80,7 +79,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <StyledPage>
           <Head>
             <title>
-              {pathname === '/' ? 'Nayoo exam1' : pathname.split('/')[1].toUpperCase()}
+              {pathname === '/' ? 'Nayoo exam2' : pathname.split('/')[1].toUpperCase()}
             </title>
             <meta charSet='utf-8' />
             <meta
