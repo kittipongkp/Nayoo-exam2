@@ -16,7 +16,7 @@ export type Data = {
 };
 
 export const useAddCompany = () => {
-  return useQuery<Data[], { message: string }>(
+  return useQuery<Data[]>(
     "todos",
     () =>
       axios

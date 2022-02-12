@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
