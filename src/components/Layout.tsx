@@ -93,12 +93,6 @@ const Layout: React.FC<Props> = ({ children }) => {
           <Row>
           <NavBar />
           </Row>
-          <Row >
-            <AdsBanner />
-          </Row>
-          <Row style={{ width: '80%', margin: 'auto' }}  >
-            <AdsBannerBottom />
-          </Row>
           <DisplayedPage>
             <>{children}</>
             <>
